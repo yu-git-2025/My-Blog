@@ -1,47 +1,60 @@
 .layout {
-    background-color:#f9fafb;
+    background: 
+                radial-gradient(circle at 30% 70%, rgba(161, 196, 253, 0.7), transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(194, 233, 251, 0.7), transparent 40%),
+                rgba(255, 255, 255, 0.1);
     width: 100%;
     height: 100%;
     padding: 10px;
 }
 
 .layout-middle{
-    background-color:#f9fafb;
+    background-color: rgba(255, 255, 255, 0);
+    height: calc(100% - 150px);
+    min-height: 300px;
 }
 
 .header {
-    background-color: #f9fafb;
-    height: 15%;
+    /* height: 15%; */
+    height: 100px;
     margin: 10px;
-    border:2px solid #000;
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 .sider-left {
-    background-color: #f9fafb;
     margin: 10px;
-    border:2px solid #000;
     border-radius: 5px;
 }
 
 .sider-right {
-    background-color: #f9fafb;
     margin: 10px;
-    border:2px solid #000;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .content {
-    background-color: #f9fafb;
+    height: calc(100% - 20px);
     margin: 10px;
-    border:2px solid #000;
+    overflow: auto; 
     border-radius: 5px;
 }
 
 .footer {
-    background-color: #f9fafb;
-    height: 5%;
+    /* height: 5%; */
+    height: 50px;
     margin: 10px;
-    border:2px solid #000;
-    border-radius: 5px;
+    border-radius: 12px;
+}
+
+/* 基础玻璃质感样式 */
+.glass-effect {
+  /* 半透明背景 */
+  background: rgba(255, 255, 255, 0.25);
+  /* 模糊效果 - 核心属性 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* 兼容Safari */
+  /* 边框效果增强质感 */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* 阴影增加深度感 */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
