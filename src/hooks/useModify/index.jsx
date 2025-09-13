@@ -27,6 +27,7 @@ export const useDisplayByRoute = () => {
     const displayMap = {
       '/': true,
       '/content': false,
+      '/user': true,
     };
     
     const shouldDisplay = displayMap[location.pathname];

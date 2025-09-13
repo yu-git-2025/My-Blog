@@ -1,6 +1,7 @@
 import { Layout } from 'antd';
 import './index.css';
 import { Outlet } from 'react-router-dom';
+import HeaderPage from '../Header'; 
 import SiderRight from '../Sider-Right';
 import SiderLeft from '../Sider_Left'
 import { useSizeByRoute, useDisplayByRoute } from '../../hooks/useModify';
@@ -14,7 +15,9 @@ function LayoutPage() {
     const {display,isExiting} = useDisplayByRoute();
     return (
         <Layout className='layout'>
-            <Header className='header glass-effect'>Header</Header>
+            <Header className='header glass-effect'>
+                <HeaderPage />
+            </Header>
             <Layout className='layout-middle  content-enter'>
                 <Sider width='15%' className='sider-left glass-effect'>
                     <SiderLeft />

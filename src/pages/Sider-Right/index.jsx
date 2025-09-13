@@ -3,11 +3,15 @@ import Statistic from "../../components/Statistic"
 import "./index.css"
 import { useLocation } from "react-router-dom"
 import { TOC } from '../../components/MarkdownWithTOC';
-import rawMD from '../../assets/React.md?raw';
+import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
 function SiderRight() {
     const location = useLocation()
-
+    const {blog} =useSelector(state => state.blog)
+    const [params] = useSearchParams()
+    const id = Number(params.get('id'))
+    const blogItem = blog.find(item => item.id === id)
     const siderRightContent = () => { 
         if (location.pathname === '/') {
             return (
@@ -21,7 +25,7 @@ function SiderRight() {
             return (
                 <>
                     <TOC 
-                        markdownText={rawMD}
+                        markdownText={blogItem.content}
                         tocTitle="目录"
                     />
 
