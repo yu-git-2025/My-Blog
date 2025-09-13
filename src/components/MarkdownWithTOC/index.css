@@ -1,0 +1,18 @@
+/* components/MarkdownWithTOC.css */
+.sidebar {
+  transition: all 0.3s ease;
+  padding: 20px 20px 20px 5px;
+
+}
+
+.content {
+  flex-grow: 1;
+  box-sizing: border-box;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.markdown-body { 
+  padding: 20px;
+  background-color: aquamarine;
+}

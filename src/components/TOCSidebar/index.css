@@ -1,0 +1,77 @@
+/* components/TOCSidebar.css */
+.toc-container {
+  padding: 10px 0;
+}
+
+.toc-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292e;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.toc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toc-item {
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  color: #586069;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toc-item:hover {
+  color: #0366d6;
+  background-color: rgba(3, 102, 214, 0.05);
+}
+
+.toc-item.active {
+  color: #0366d6;
+  font-weight: 600;
+  background-color: rgba(3, 102, 214, 0.1);
+  box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.2);
+  transform: translateX(5px);
+}
+
+.toc-level-1 {
+  margin-left: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.toc-level-2 {
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.toc-level-3 {
+  margin-left: 32px;
+  font-size: 13px;
+}
+
+.toc-level-4 {
+  margin-left: 48px;
+  font-size: 13px;
+}
+
+.toc-level-5 {
+  margin-left: 64px;
+  font-size: 12px;
+}
+
+.toc-level-6 {
+  margin-left: 80px;
+  font-size: 12px;
+}
