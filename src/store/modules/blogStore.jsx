@@ -15,33 +15,36 @@ const blogStore = createSlice({
                 title: 'React 快速上手',
                 description: 'React 是一个用于构建用户界面的 JavaScript 库。本篇文章主要讲述 React 的基本用法。',
                 content: ReactMD,
-                creatTime: '2025-08-31',
-                author: 'yu'
-
+                createDate: '2025-08-31',
+                author: 'yu',
+                visits:13,
             },
             {
                 id: 2,
                 title: '如何在Vite.js+React项目中渲染Markdown 文件',
                 description: '本篇文章主要讲述了在Vite.js+React项目中如何渲染Markdown 文件的方法。',
                 content: VRMD,
-                creatTime: '2025-09-07',
-                author: 'yu'
+                createDate: '2025-09-07',
+                author: 'yu',
+                visits: 1,
             },
             {
                 id: 3,
                 title: 'Node.js版本管理问题',
                 description: '本篇文章主要讲述了关于Node.js版本管理相关问题',
                 content: NodejsMD,
-                creatTime: '2025-09-08',
-                author: 'yu'
+                createDate: '2025-09-08',
+                author: 'yu',
+                visits: 15,
             },
             {
                 id: 4,
                 title: '消息队列',
                 description: '本篇文章主要讲述了消息队列的相关内容',
                 content: MQMD,
-                creatTime: '2025-05-16',
-                author: 'yu'
+                createDate: '2025-05-16',
+                author: 'yu',
+                visits: 10,
             }
         ]
     },

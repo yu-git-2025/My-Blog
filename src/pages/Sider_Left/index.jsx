@@ -15,6 +15,9 @@ const Menu = () => {
             <div className={`menu-item ${route === '/' ? 'active' : ''}`} onClick={() => navigate('/')}>
                 首页
             </div>
+            <div className={`menu-item ${route === '/article' ? 'active' : ''}`} onClick={() => navigate('/article')}> 
+                文章
+            </div>
             <div className={`menu-item ${route === '/user' ? 'active' : ''}`} onClick={() => navigate('/user')}> 
                 我的
             </div>
