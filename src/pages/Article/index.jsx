@@ -1,29 +1,30 @@
 
 import Card from "../../components/Card"
 import { Segmented } from 'antd';
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import './index.css'
-
+import { setSortType } from "../../store/modules/stateStore";
 
 function Article() {
-  const [type, setType]=useState('最新');
+  const {sortType} =useSelector(state => state.state)
+  const dispatch = useDispatch()
 
   return (
     <div className="article">
       <div className="article-sort">
         <Segmented
           options={['最新', '热门']}
-          defaultValue="最新"
+          defaultValue={sortType}
           size="large"
           className="article-segment"
 
           onChange={value => {
-            setType(value);
+            dispatch(setSortType(value));
           }}
         />
 
         </div>    
-        <Card type={type}/>
+        <Card type={sortType}/>
     </div>
   )
 }
