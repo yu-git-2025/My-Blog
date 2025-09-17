@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const stateStore = createSlice({
   name: "status",
   initialState: {
-    sortType: "最新",
+    sortType: "最新发布",
   },
   reducers: {
     setSortType: (state, action) => {

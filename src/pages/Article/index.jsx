@@ -13,7 +13,7 @@ function Article() {
     <div className="article">
       <div className="article-sort">
         <Segmented
-          options={['最新', '热门']}
+          options={['最新发布', '最近更新']}
           defaultValue={sortType}
           size="large"
           className="article-segment"
