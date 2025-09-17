@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom"
 import { TOC } from '../../components/MarkdownWithTOC';
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import Timeline from "../../components/Timeline"
 
 function SiderRight() {
     const location = useLocation()
@@ -31,6 +32,13 @@ function SiderRight() {
 
                 </>
             ) 
+        }
+        else if (location.pathname === '/user') {
+            return (
+                <>
+                    <Timeline />
+                </>
+            )
         }
     }
 

@@ -5,6 +5,7 @@ import Upload from '../../components/Upload'
 import { useSelector,useDispatch } from "react-redux";
 import { useState,useEffect } from 'react';
 import { updateUserInfo } from '../../store/modules/userinfoStore';
+import Card from '../../components/Card'
 
 const validateMessages = {
   required: '${label} 是必填项!',
@@ -24,7 +25,7 @@ const items = [
   {
     key: '1',
     label: '我的作品',
-    children: 'Content of Tab Pane 1',
+    children: <Card/>,
   },
   {
     key: '2',
