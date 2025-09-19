@@ -1,4 +1,4 @@
-import { Avatar,Tabs,Button,Modal, Form, Input, InputNumber,Select } from 'antd';
+import { Avatar,Tabs,Button,Modal, Form, Input, InputNumber,Select,message } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import './index.css'
 import Upload from '../../components/Upload'
@@ -6,6 +6,10 @@ import { useSelector,useDispatch } from "react-redux";
 import { useState,useEffect } from 'react';
 import { updateUserInfo } from '../../store/modules/userinfoStore';
 import Card from '../../components/Card'
+
+
+
+  
 
 const validateMessages = {
   required: '${label} 是必填项!',
@@ -21,11 +25,37 @@ const validateMessages = {
 const onTabChange = key => {
   console.log(key);
 };
+
+const MyArticle = () => { 
+    return (
+        <div className="my-article-user">
+            <Card
+                card={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                }}
+                cardTitle={{
+                    fontSize: '1em',
+                    fontWeight: 600,
+                    padding: '5px 10px',
+                }}
+                cardDescription={{
+                    fontSize: '0.9em',
+                    fontWeight: 500,
+                }}
+                cardMessage={{
+                fontSize: '0.8em',
+                fontWeight: 500,
+            }}
+            />
+        </div>
+    )
+}
+
 const items = [
   {
     key: '1',
     label: '我的作品',
-    children: <Card/>,
+    children: <MyArticle/>,
   },
   {
     key: '2',
@@ -67,6 +97,7 @@ function User() {
         dispatch(updateUserInfo(values));
         // 关闭模态框
         setIsModalOpen(false);
+        success();
     };
 
     const handleCancel = () => {
@@ -75,18 +106,32 @@ function User() {
         setIsModalOpen(false);
     };
 
+    const [messageApi, contextHolder] = message.useMessage();
+    const success = () => {
+        messageApi.open({
+                type: 'success',
+                content: '修改成功',
+            });
+    };
+
     return (
         <div className="user">
+            {contextHolder}
             <div className="userinfo-user-container">
                 <div className="avatar-user">
                     <Avatar
                         size={80}
+                        // 有头像时显示图片，无则不设置src（自动使用icon）
+                        src={userinfo.avatar || undefined} 
+                        // 默认图标（无头像或加载失败时显示）
                         icon={<UserOutlined />}
+                        // 无障碍访问：添加alt文本
+                        alt={userinfo?.username || '用户头像'}
                     />
                 </div>
                 <div className="text-user">
                     <div className="username-user">{userinfo.username}</div>
-                    <div className="information-user">{userinfo.sex}  |  {userinfo.age}  |  {userinfo.occupation}  |  {userinfo.education}  |  {userinfo.location}</div>
+                    <div className="information-user">{userinfo.sex} {userinfo.age} {userinfo.occupation} {userinfo.education} {userinfo.location}</div>
                     <div className="introduction-user">{userinfo.introduction}</div>
                 </div>
                 <div className="edit-user">
@@ -122,7 +167,7 @@ function User() {
                             colon={false}
                         >
                             <Form.Item name="username" label="昵称" rules={[{ required: true }]}>
-                                <Input/>
+                                <Input maxLength={8} />
                             </Form.Item>
                             <Form.Item name="sex" label="性别" >
                                 <Select
@@ -149,7 +194,7 @@ function User() {
                             </Form.Item>
                             <Form.Item name="introduction" label="个人介绍">
                                 <Input.TextArea showCount autoSize={{ minRows: 2, maxRows: 8 }}
-                                    maxLength={100} />
+                                    maxLength={100}  allowClear	/>
                             </Form.Item>
                         </Form>
                     </Modal>
@@ -161,9 +206,9 @@ function User() {
                         items={items}
                         onChange={onTabChange} />
                 </div>
-                <div className="upload-user">
+                {/* <div className="upload-user">
                     <Upload />
-                </div>
+                </div> */}
             </div>
         </div>
     )

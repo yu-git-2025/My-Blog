@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const userinfoStore = createSlice({
     name: 'userinfo',
     initialState: {
-        username: '挽梦忆笙歌',
-        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        username: '与',
+        avatar: 'https://bpic.588ku.com/element_pic/24/06/19/d253199d785aea9e640cebeeae8e2a15.jpg!/fw/350/quality/90/unsharp/true/compress/true',
         sex: '男',
         age: 18,
         occupation: '学生',

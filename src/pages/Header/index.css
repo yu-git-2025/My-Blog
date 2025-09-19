@@ -4,12 +4,12 @@
     align-items: center;
 }
 
-.title {
+.header-title {
     font-size: 1.8em;
-
+    font-weight: 600;
 }
 
-.avatar {
+.header-avatar {
     margin-left: auto;
     /* margin: 0 0 0 auto; */
     display: flex;
@@ -18,11 +18,19 @@
     caret-color: transparent;
 }
 
-.dropdown-menu { 
+.header-avatar .ant-avatar {
+    cursor: pointer; /* 鼠标悬停显示手型 */
+    transition: transform 0.2s;
+}
+.header-avatar .ant-avatar:hover {
+    transform: scale(1.10); /* 轻微放大效果 */
+}
+
+.header-dropdown-menu { 
     background-color: rabga(255, 255, 255, 0);
 }
 
-.username {
+.header-username {
     font-size: 0.8em;
     line-height: 1;
     margin-top: 5px;

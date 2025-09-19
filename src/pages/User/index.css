@@ -7,8 +7,8 @@
     display: flex;
     align-items: flex-start;
     caret-color: transparent;
-    margin:50px;
-    width: calc(100% - 100px);
+    margin:50px 50px 10px 50px; 
+    width: calc(100% - 60px);
 }
 
 /* .avatar-user { 
@@ -46,13 +46,18 @@
 .tab-user-container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     width: 100%;
 }
 
 .tab-user {
     margin: 0 50px;
     width: 60%;
+}
+
+.my-article-user {
+    max-height: 380px;
+    overflow-y: auto;
 }
 
 .upload-user {

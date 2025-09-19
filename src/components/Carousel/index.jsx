@@ -1,20 +1,16 @@
 import { Carousel } from 'antd';
 import './index.css';
+import img1 from '../../assets/images/1.png';
+import img2 from '../../assets/images/2.jpg';
 
 function CarouselComponent() {
   return (
       <Carousel arrows  autoplay={{ dotDuration: true }} autoplaySpeed={3000} className='carousel'>
         <div>
-          <h3 className='carousel-item'>1</h3>
+          <img src={img1} className='carousel-item'/>
         </div>
         <div>
-          <h3 className='carousel-item'>2</h3>
-        </div>
-        <div>
-          <h3 className='carousel-item'>3</h3>
-        </div>
-        <div>
-          <h3 className='carousel-item'>4</h3>
+          <img src={img2} className='carousel-item'/>
         </div>
       </Carousel>
 

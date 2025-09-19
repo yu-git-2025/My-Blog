@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import HeaderPage from '../Header'; 
 import SiderRight from '../Sider-Right';
 import SiderLeft from '../Sider_Left'
+import FooterPage from '../Footer';
 import { useSizeByRoute, useDisplayByRoute } from '../../hooks/useModify';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -30,7 +31,9 @@ function LayoutPage() {
                 </Sider>
             </Layout>
             {display && (<Footer className={`footer glass-effect 
-                ${isExiting ? 'footer-exit' : 'footer-enter'}`} />)}
+                ${isExiting ? 'footer-exit' : 'footer-enter'}`} >
+                    <FooterPage />
+                </Footer>)}
         </Layout>
     )
 }
